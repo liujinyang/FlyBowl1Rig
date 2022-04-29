@@ -1,0 +1,10 @@
+Installation instructions
+---------------------------
+
+To install jfrc_metadata_tools add the src directory and all subdirectories to
+the Matlab path. 
+
+run the functions updateLinenames, updateEffectors to create the linename and effector 
+data files.
+
+

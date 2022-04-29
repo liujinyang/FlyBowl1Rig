@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<experiment assay="FlyBowl" protocol="ExperimentProtocol0001" datetime="2010-08-02T21:41:53" experimenter="bransonk" shiftflytemp_time="5.194007" fliesloaded_time="4.543005" >
+	<apparatus type="rig" id="1">
+		<apparatus type="plate" id="2">
+			<apparatus type="bowl" id="3">
+				<environment temperature="25.000000" humidity="60.000000" />
+				<flies line="GMR_10B07_AE_01" effector="TNT" cross_date="2010-07-26" age="3,5" count="0" hours_starved="11.698159" gender="b">
+					<genotype>GMR_10B07_AE_01 &amp; w;UAS-cTNTe</genotype>
+					<rearing protocol="RearingProtocol0001" incubator="2" lightson="08:00" lightsoff="16:00" />
+					<handling protocol="HandlingProtocol0001" handler="bransonk" starvation_time="11.698159" sorter="bransonk" sorting_time="36.698159" />
+				</flies>
+			</apparatus>
+		</apparatus>
+	</apparatus>
+</experiment>
+

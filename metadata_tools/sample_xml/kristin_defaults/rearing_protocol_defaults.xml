@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rearing>
+  <lightcycle>
+    <hourslight datatype="float" range_basic="[0,24]" range_advanced="[0,24]" units="hours" appear_basic="true" appear_advanced="true" entry="manual" description="Number of hours the lights are on per day. " required="true" default="$LAST" last="8" />
+    <lightson_time datatype="time24" range_basic="" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Time the lights are turned on everyday." required="true" default="$LAST" last="08:00" />
+    <lightsoff_time datatype="time24" range_basic="" range_advanced="" units="" appear_basic="true, readonly" appear_advanced="true" entry="manual" description="Time the lights are turned off everyday." required="true" default="$LAST" last="16:00" />
+  </lightcycle>
+  <temperature_setpoint datatype="float" range_basic="[-Inf, Inf]" range_advanced="[-Inf, Inf]" units="degrees Celsius" appear_basic="true" appear_advanced="true" entry="manual" description="Set point of rearing incubator in deg. C " required="true" default="$LAST" last="25"></temperature_setpoint>
+  <humidity datatype="float" range_basic="[0,100]" range_advanced="[0,100]" units="percent" appear_basic="true" appear_advanced="true" entry="manual" description="Set point of rearing incubator in %RH." required="true" default="$LAST" last="60"></humidity>
+  <food_recipe datatype="string" range_basic="recipe_1,recipe_2,recipe_3" range_advanced="recipe_1,recipe_2,recipe_3" units="" appear_basic="true" appear_advanced="true" entry="manual" description="CV for food recipe." required="true" default="$LAST" last="recipe_1"></food_recipe>
+  <housing datatype="string" range_basic="bottles,vials,other" range_advanced="bottles,vials,other" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Type of container the flies are housed in in the incubator." required="true" default="$LAST" last="bottles"></housing>
+  <housing_density>
+    <parents_female datatype="integer" range_basic="[0,20]" range_advanced="[0,20]" units="flies" appear_basic="true" appear_advanced="true" entry="manual" description="Number of female parent flies initially put in the vial." required="true" default="$LAST" last="10" />
+    <parents_male datatype="integer" range_basic="[0,20]" range_advanced="[0,20]" units="flies" appear_basic="true" appear_advanced="true" entry="manual" description="Number of male parent flies initially put in the vial." required="true" default="$LAST" last="5" />
+    <days_before_flip datatype="float" range_basic="[0,20]" range_advanced="[0,20]" units="days" appear_basic="true" appear_advanced="true" entry="manual" description="Number of days the parents are in the vial before flip." required="true" default="$LAST" last="10" />
+  </housing_density>
+</rearing>

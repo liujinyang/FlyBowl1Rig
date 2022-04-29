@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rearing food_recipe="recipe_1" housing="bottles" humidity="62" temperature_setpoint="34">
+    <lightcycle hourslight="8" lightsoff_time="16:00" lightson_time="08:00"/>
+    <housing_density days_before_flip="12" parents_female="10" parents_male="5"/>
+</rearing>

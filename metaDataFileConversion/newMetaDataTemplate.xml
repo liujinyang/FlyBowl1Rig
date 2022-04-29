@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<experiment assay="" data_capture_version=""
+    exp_datetime="" experimenter=""
+    led_protocol=""
+    protocol="" screen_type="">
+    <session>
+        <apparatus
+            apparatus_id=""
+            bowl="" camera=""
+            computer="" harddrive="" rig="" room="" top_plate=""/>
+        <flies cross_barcode="" cross_date=""
+            effector=""
+            female_parent="" flip_used="" gender=""
+            line="" male_parent="" num_flies="">
+            <rearing rearing_incubator="" rearing_protocol=""/>
+            <handling datetime_sorted="" handler_cross=""
+                handler_sorting=""
+                handling_protocol=""
+                num_flies_dead="" seconds_fliesloaded=""/>
+        </flies>
+    </session>
+    <environment IR_intensity="" humidity="" temperature=""/>
+    <notes_behavioral/>
+    <notes_technical/>
+    <flag_redo>0</flag_redo>
+    <flag_aborted>0</flag_aborted>
+</experiment>

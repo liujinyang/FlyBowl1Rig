@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<experiment>
+  <assay datatype="string" range_basic="fly_olympiad_gap" range_advanced="fly_olympiad_gap" units="" appear_basic="true, readonly" appear_advanced="true, readonly" entry="manual" description="Name of assay" required="true" default="$LAST" last="fly_olympiad_gap"></assay>
+  <exp_datetime datatype="datetime" range_basic="" range_advanced="" units="" appear_basic="false" appear_advanced="false" entry="acquire" description="Date and time at which the experiment was started. " required="true" default="" last="" />
+  <experimenter datatype="string" range_basic="triphant, korffw, robertss" range_advanced="triphant, korffw, robertss" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of the person who is running the experiment." required="true" default="$LAST" last=""></experimenter>
+  <protocol datatype="string" range_basic="EP_gap_v001p1.xml" range_advanced="EP_gap_v001p1.xml" units="" appear_basic="true, readonly" appear_advanced="true" entry="manual" description="Name of an XML file that has values for experiment parameters (see bottom of page for protocol fields)&#xD;&#xA;whenever an experiment protocol variable is changed, user will need to create new experiment protocol file and give it a new name " required="true" default="$LAST" last="EP_gap_v001p1.xml"></protocol>
+  <apparatus>
+    <room datatype="string" range_basic="3C.310.3" range_advanced="3C.310.3,2E.343,2E.227" units="" appear_basic="true, readonly" appear_advanced="true" entry="manual" description="Room number" required="true" default="$LAST" last="" />
+    <computer datatype="string" range_basic="" range_advanced="" units="" appear_basic="true, readonly" appear_advanced="true, readonly" entry="acquire" description="Computer identifier." required="false" default="" last="" />
+    <rig datatype="integer" range_basic="[1,4]" range_advanced="[1,4]" units="" appear_basic="true, readonly" appear_advanced="true, readonly" entry="acquire" description="ID of rig" required="true" default="" last="" />
+    <disk_id datatype="integer" range_basic="[1,10]" range_advanced="[1,10]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Climbing disk ID" required="false" default="$LAST" last="" />
+    <disk_position>
+      <location_x datatype="float" range_basic="[0,Inf]" range_advanced="[0,Inf]" units="pixels" appear_basic="true" appear_advanced="true" entry="manual" description="x position of center of climbing arena in relation to the image" required="false" default="" last="" />
+      <location_y datatype="float" range_basic="[0,Inf]" range_advanced="[0,Inf]" units="pixels" appear_basic="true" appear_advanced="true" entry="manual" description="y position of center of climbing arena in relation to the image" required="false" default="" last="" />
+      <radius datatype="float" range_basic="[0,Inf]" range_advanced="[0,Inf]" units="pixels" appear_basic="true" appear_advanced="true" entry="manual" description="Radius of the climbing disk in pixels" required="false" default="" last="" />
+    </disk_position>
+  </apparatus>
+  <session>
+    <id datatype="integer" range_basic="[1,1]" range_advanced="[1,1]" units="" appear_basic="true, readonly" appear_advanced="true, readonly" entry="manual" description="Session ID" required="true" default="1" last="1" />
+    <flies>
+      <cross_barcode datatype="integer" range_basic="[0,Inf]" range_advanced="[0,Inf]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Barcode for the cross" required="true" default="$LAST" last=""></cross_barcode>
+      <line datatype="string" range_basic="$LINENAME" range_advanced="$LINENAME" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Verified as legal line name in SAGE. New line names may be added to SAGE using the web interface. " required="true" default="$LAST" last="" />
+      <effector datatype="string" range_basic="$EFFECTOR" range_advanced="$EFFECTOR" units="" appear_basic="true, readonly" appear_advanced="true" entry="manual" description="Verified as legal effector name in SAGE." required="true" default="$LAST" last="" />
+      <cross_date datatype="datetime" range_basic="[now-35,now-15], days" range_advanced="[now-35,now-15], days" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Date cross was made to generate this set of flies. " required="true" default="$LAST" last="" />
+      <flip_used datatype="string" range_basic="2" range_advanced="0,1,2" units="" appear_basic="true, readonly" appear_advanced="true" entry="manual" description="Flip used" required="true" default="$LAST" last="" />
+      <wish_list datatype="integer" range_basic="[0,Inf]" range_advanced="[0,Inf]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Wishlist or Set" required="false" default="$LAST" last="" />
+      <gender datatype="string" range_basic="m,f,b,x" range_advanced="m,f,b,x" units="" appear_basic="true, readonly" appear_advanced="true" entry="manual" description="The gender or genders of the flies. m=male, f=female, b=both, x=unknown" required="true" default="$LAST" last="" />
+      <num_flies datatype="integer" range_basic="[0,20]" range_advanced="[0,20]" units="flies" appear_basic="true" appear_advanced="true" entry="manual" description="Number of flies actually put into apparatus for this experiment; may be different from protocol number of flies intended for the experiment." required="true" default="15" last="15" />
+      <num_flies_dead datatype="integer" range_basic="[0,20]" range_advanced="[0,20]" units="flies" appear_basic="true" appear_advanced="true" entry="manual" description="Number of flies dead at the start of the experiment" required="false" default="0" last="0" />
+      <genotype>
+        <content datatype="string" range_basic="" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="acquire" description="Genotype of flies. Typically auto-generated from line and effector. " required="false" default="$LAST" last=""></content>
+      </genotype>
+      <rearing>
+        <rearing_incubator datatype="integer" range_basic="[1,5]" range_advanced="[1,5]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="ID number for incubator flies were raised in." required="true" default="$LAST" last="" />
+        <rearing_protocol datatype="string" range_basic="RP_Olympiad_v001p0,RP_Olympiad_v002p0,RP_Olympiad_v003p0,RP_Olympiad_v004p0,RP_Olympiad_v005p0,RP_Olympiad_v006p0,RP_Olympiad_v006p1,RP_Olympiad_v007p0,RP_Olympiad_v008p0,RP_Olympiad_v009p0" range_advanced="RP_Olympiad_v001p0,RP_Olympiad_v002p0,RP_Olympiad_v003p0,RP_Olympiad_v004p0,RP_Olympiad_v005p0,RP_Olympiad_v006p0,RP_Olympiad_v006p1,RP_Olympiad_v007p0,RP_Olympiad_v008p0,RP_Olympiad_v009p0" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Rearing Protocols: MetadataFiles\ProtocolFiles\Olympiad\RearingProtocols" required="true" default="$LAST" last="" />
+      </rearing>
+      <handling>
+        <handler_cross datatype="string" range_basic="flyolympiad,flycore,cavallaroa,chenn,hayess,hibbardk,hirokawaj,kaoj,lows,roberts,rowellw,shustermand,triphant,zhengg" range_advanced="flyolympiad,flycore,cavallaroa,chenn,hayess,hibbardk,hirokawaj,kaoj,lows,roberts,rowellw,shustermand,triphant,zhengg" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of the person who sorted the flies." required="true" default="$LAST" last="" />
+        <handling_protocol datatype="string" range_basic="HP_gap_v001p0" range_advanced="HP_gap_v001p0" units="" appear_basic="true, readonly" appear_advanced="true" entry="manual" description="Name of an XML file that has values for pre-assay handling parameters (see bottom of page for protocol fields) whenever a handling protocol variable is changed, user will need to create new rearing protocol file and give it a new name ." required="true" default="$LAST" last="HP_gap_v001p0" />
+        <handler_sorting datatype="string" range_basic="flyolympiad,flycore,cavallaroa,chenn,hayess,hibbardk,hirokawaj,kaoj,lows,roberts,rowellw,shustermand,triphant,zhengg" range_advanced="flyolympiad,flycore,cavallaroa,chenn,hayess,hibbardk,hirokawaj,kaoj,lows,roberts,rowellw,shustermand,triphant,zhengg" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of the person who sorted the flies." required="true" default="$LAST" last="" />
+        <datetime_sorting datatype="datetime" range_basic="[now-12,now], days" range_advanced="[now-12,now], days" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Date that the flies were sorted." required="true" default="$LAST" last="" />
+        <hours_starved datatype="float" range_basic="[0,48]" range_advanced="[0,48]" units="hours" appear_basic="true, readonly" appear_advanced="true" entry="manual" description="Number of hours flies were starved prior to start of experiment." required="true" default="0" last=""></hours_starved>
+      </handling>
+    </flies>
+  </session>
+  <environment>
+    <humidity datatype="float" range_basic="[0,100]" range_advanced="[0,100]" units="percent" appear_basic="false" appear_advanced="false" entry="acquire" description="Humidity snapshot at the time the assay was started." required="true" default="" last="" />
+    <temperature datatype="float" range_basic="[-Inf, Inf]" range_advanced="[-Inf, Inf]" units="degrees Celsius" appear_basic="false" appear_advanced="false" entry="acquire" description="Temperature snapshot at the time the assay was started." required="true" default="" last="" />
+  </environment>
+  <notes_behavioral>
+    <content datatype="string" range_basic="" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="manual" description="An open field area for the experimenter to write observations about fly behavior from the start of the experiment." required="false" default="" last="" />
+  </notes_behavioral>
+  <notes_technical>
+    <content datatype="string" range_basic="" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="manual" description="An open field area for the experimenter to write observations about experimental equipment/conditions at the start of the experiment." required="false" default="" last="" />
+  </notes_technical>
+  <notes_keyword>
+    <content datatype="multiselect" range_basic="$NOTES_KEYWORDS" range_advanced="$NOTES_KEYWORDS" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Legal keyword(s) from SAGE cv_term table" required="false" default="" last="" />
+  </notes_keyword>
+  <flag_redo>
+    <content datatype="integer" range_basic="[0,1]" range_advanced="[0,1]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Flag specifying whether or not experiment should be re-done" required="true" default="0" last="0" />
+  </flag_redo>
+  <flag_review>
+    <content datatype="integer" range_basic="[0,1]" range_advanced="[0,1]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Flag specifying whether or not experiment should be re-done" required="true" default="0" last="0" />
+  </flag_review>
+  <flag_aborted>
+    <content datatype="integer" range_basic="[0,1]" range_advanced="[0,1]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Flag specifying whether or not experiment was aborted" required="true" default="0" last="" />
+  </flag_aborted>
+  <flag_legacy>
+    <content datatype="integer" range_basic="[0,1]" range_advanced="[0,1]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Flag specifying whether experiment took place prior to XML specification" required="true" default="0" last="" />
+  </flag_legacy>
+</experiment>

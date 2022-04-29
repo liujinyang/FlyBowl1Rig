@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PLControl>
+    <date appear_advanced="true" appear_basic="true"
+        datatype="datetime" default="$LAST"
+        description="Experiment date"
+        entry="manual" last="" range_advanced="[now-100, now+100]"
+        range_basic="[now-100, now+100]" required="true" units=""/>
+    <date_of_birth appear_advanced="true" appear_basic="true"
+        datatype="datetime" default="$LAST"
+        description="date of birth of the drosophilas"
+        entry="manual" last="" range_advanced="[now-365, now]"
+        range_basic="[0,100]" required="true" units="percent"/>
+    <driver appear_advanced="true" appear_basic="true"
+        datatype="string" default="$LAST"
+        description="driver" entry="manual" last=""
+        range_advanced="$LINENAME"
+        range_basic="$LINENAME" required="true" units=""/>
+    <effector appear_advanced="true" appear_basic="true"
+        datatype="string" default="$LAST"
+        description="Effector"
+        entry="manual" last=""
+        range_advanced="$EFFECTOR"
+        range_basic="$EFFECTOR" required="true" units=""/>
+    <sex appear_advanced="true" appear_basic="true"
+        datatype="string" default="$LAST"
+        description="sex"
+        entry="manual" last="female"
+        range_advanced="male, female"
+        range_basic="male, female" required="true" units=""/>
+    <rearing_temp appear_advanced="true" appear_basic="true"
+        datatype="integer" default="$LAST"
+        description="rearing temperature"
+        entry="manual" last="18"
+        range_advanced="[15,40]"
+        range_basic="[15,40]" required="true" units=""/>
+    <light_off_time appear_advanced="true" appear_basic="true"
+        datatype="time24" default="$LAST"
+        description="light off time"
+        entry="manual" last="12:00"
+        range_advanced="[00:00, 20:00]"
+        range_basic="[00:00, 20:00]" required="true" units=""/>
+    <protocol appear_advanced="true" appear_basic="true"
+        datatype="string" default="$LAST"
+        description="protocol for the experiment"
+        entry="manual" last=""
+        range_advanced=""
+        range_basic="" required="true" units=""/>        
+    <notes appear_advanced="true" appear_basic="true"
+        datatype="string" default="$LAST"
+        description="Notes for the experiment"
+        entry="manual" last=""
+        range_advanced=""
+        range_basic="" required="true" units=""/>
+</PLControl>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<experiment assay="FlyBowl" datetime="" experimenter="hirokawaj"
+    fliesloaded_time="" protocol="ExperimentProtocol10001" shiftflytemp_time="">
+    <apparatus id="1" type="rig">
+        <apparatus id="2" type="plate">
+            <apparatus id="3" type="bowl">
+                <environment humidity="48.3662" temperature="25.0787"/>
+                <flies count="24" cross_date="20130519T000000"
+                    effector="1xAT_attp40_3stop1" gender="b"
+                    hours_starved="1" line="rubin">
+                    <genotype>dummygenotype</genotype>
+                    <rearing incubator="5" lightsoff="11:58"
+                        lightson="11:58" protocol="RearingProtocol10001"/>
+                    <handling handler="hirokawaj"
+                        protocol="HandlingProtocol10001"
+                        sorter="hirokawaj" sorting_time="1" starvation_time="1"/>
+                </flies>
+                <behavior_notes/>
+                <technical_notes/>
+                <redo_flag>None</redo_flag>
+            </apparatus>
+        </apparatus>
+    </apparatus>
+</experiment>

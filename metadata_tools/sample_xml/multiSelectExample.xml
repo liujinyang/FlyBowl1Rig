@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<experiment>
+  <basic_example datatype="multiselect" range_basic="bob, dave, steve" range_advanced="bob, dave, alan, greg, mortimer" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Legal keyword(s) from SAGE cv_term table" required="false" default="1" last="dave" />
+  <flip_used datatype="multiselect" range_basic="1,2,3,4" range_advanced="1,2,3,4,5,6" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Legal keyword(s) from SAGE cv_term table" required="false" default="1" last="" />
+  <notes_keyword>
+    <content datatype="multiselect" range_basic="$NOTES_KEYWORDS" range_advanced="$NOTES_KEYWORDS" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Legal keyword(s) from SAGE cv_term table" required="false" default="" last="" />
+  </notes_keyword>
+</experiment>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<experiment assay="Gap Crossing" computer="" exp_datetime="" experimenter="korffw" protocol="EP0001.xml">
+  <session disk_id="5" rig="">
+    <flies count="10" cross_date="2011-01-26T00:00:00" effector="GFP" gender="m" hours_starved="24" line="rubin">
+      <genotype>bob</genotype>
+      <rearing incubator="1" protocol="RP0001_AM.xml" />
+      <handling protocol="HP0001" sorter="ldap_user_1" sorting_time="2011-02-17T00:00:00" />
+    </flies>
+  </session>
+  <environment humidity="" temperature="" />
+  <note_behavioral />
+  <note_technical />
+  <flag_redo>None</flag_redo>
+  <flag_review>None</flag_review>
+</experiment>

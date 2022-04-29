@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<experiment>
+  <assay datatype="string" range_basic="fly_olympiad_aggression" range_advanced="fly_olympiad_aggression" units="" appear_basic="true, readonly" appear_advanced="true, readonly" entry="manual" description="Name of assay" required="true" default="fly_olympiad_aggression" last="fly_olympiad_aggression"></assay>
+  <exp_datetime datatype="datetime" range_basic="" range_advanced="" units="" appear_basic="false" appear_advanced="false" entry="acquire" description="Date and time at which the experiment was started. " required="true" default="" last="" />
+  <experimenter datatype="string" range_basic="hoopfere,lows" range_advanced="$LDAP" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of the person who is running the experiment." required="true" default="$LAST" last=""></experimenter>
+  <protocol datatype="string" range_basic="EP_AggPrimary_v001p1.xlsx" range_advanced="EP_AggPrimary_v001p1.xlsx" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of an XML file that has values for experiment parameters (see bottom of page for protocol fields)&#xD;&#xA;whenever an experiment protocol variable is changed, user will need to create new protocol file and give it a new name " required="true" default="$LAST" last="EP_AggPrimary_v001p1.xlsx"></protocol>
+  <temperature_setpoint datatype="float" range_basic="" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Set point temperature." required="true" default="29" last="" />
+  <num_flies datatype="integer" range_basic="[1,2]" range_advanced="[1,2]" units="flies" appear_basic="true" appear_advanced="true" entry="manual" description="Number of flies actually put into apparatus for this experiment; may be different from protocol number of flies intended for the experiment." required="true" default="$LAST" last="2" />
+  <apparatus>
+    <apparatus_id datatype="string" range_basic="" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="acquire" description="Apparatus identifier = computer+arena+camera" required="true" default="" last="" />
+    <camera datatype="integer" range_basic="[1,10]" range_advanced="[1,10]" units="" appear_basic="true" appear_advanced="true" entry="acquire" description="Camera unique identifier." required="true" default="$LAST" last=""></camera>
+    <computer datatype="string" range_basic="" range_advanced="" units="" appear_basic="true, readonly" appear_advanced="true, readonly" entry="acquire" description="Computer identifier." required="true" default="" last="" />
+    <room datatype="string" range_basic="2E361.1" range_advanced="2E361.1" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Room identifier." required="true" default="$LAST" last="2E361.1" />
+    <arena datatype="string" range_basic="B, C, D, E" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Arena string identifier" required="true" default="$LAST" last="B" />
+  </apparatus>
+  <!-- Need to repeat this 12 times (chamber)... is there a better way? -->
+  <experiment>
+    <chamber datatype="integer" range_basic="[1,Inf]" range_advanced="[1,Inf]" units="" appear_basic="true, readonly" appear_advanced="true, readonly" entry="manual" description="Chamber ROI number" required="true" default="$LAST" last="1" />
+    <session>
+      <id datatype="integer" range_basic="[1,2)" range_advanced="[1,2)" units="" appear_basic="true, readonly" appear_advanced="true, readonly" entry="manual" description="The identifier of the fly within the chamber" required="true" default="1" last="1" />
+      <marking datatype="integer" range_basic="[0,1]" range_advanced="[0,1]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="The identifier of the fly within the chamber" required="true" default="0" last="0"></marking>
+      <flies>
+        <cross_barcode datatype="integer" range_basic="[-1,Inf]" range_advanced="[-1,Inf]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Barcode_CrossSerialNumber from FLYF_2 Project_Crosses table" required="true" default="-1" last="-1" />
+        <line datatype="string" range_basic="$LINENAME" range_advanced="$LINENAME" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Verified as legal line name in SAGE. New line names may be added to SAGE using the web interface. " required="true" default="$LAST" last=""></line>
+        <effector datatype="string" range_basic="$EFFECTOR" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Verified as legal effector name in SAGE." required="true" default="$LAST" last="" />
+        <gender datatype="string" range_basic="m" range_advanced="m,f" units="" appear_basic="true, readonly" appear_advanced="true" entry="manual" description="The gender or genders of the flies. m=male, f=female" required="true" default="m" last=""></gender>
+        <cross_date datatype="datetime" range_basic="[now-29,now-22], days" range_advanced="[now-29,now-22], days" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Date cross was made to generate this set of flies. " required="true" default="$LAST" last=""></cross_date>
+        <wish_list datatype="integer" range_basic="[-1,Inf]" range_advanced="[-1,Inf]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Wish list number (set number)" required="true" default="$LAST" last="-1"></wish_list>
+        <genotype>
+          <content datatype="string" range_basic="" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="acquire" description="Genotype of flies. Typically auto-generated from line and effector. " required="true" default="" last=""></content>
+        </genotype>
+        <rearing>
+          <rearing_protocol datatype="string" range_basic="RP_AggPrimary_v001p1.xlsx" range_advanced="RP_AggPrimary_v001p1.xlsx" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of an XML file that has values for rearing parameters (see bottom of page for protocol fields)&#xD;&#xA;whenever a rearing protocol variable is changed, user will need to create new rearing protocol file and give it a new name ." required="true" default="$LAST" last="" />
+          <rearing_incubator datatype="integer" range_basic="[1,5]" range_advanced="[1,5]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Incubator in which flies were raised." required="true" default="$LAST" last="" />
+        </rearing>
+        <handling>
+          <handling_protocol datatype="string" range_basic="HP_AggPrimary_v001p1.xlsx" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of an XML file that has values for pre-assay handling parameters (see bottom of page for protocol fields) whenever a handling protocol variable is changed, user will need to create new rearing protocol file and give it a new name ." required="true" default="$LAST" last="HP_AggPrimary_v001p1.xlsx"></handling_protocol>
+          <handler_sorting datatype="string" range_basic="mercerm" range_advanced="$LDAP" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of the person who sorted the flies. " required="true" default="$LAST" last="" />
+          <handler_cross datatype="string" range_basic="mcmahonj" range_advanced="$LDAP" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of the person who handled the flies pre-experiment." required="true" default="$LAST" last="" />
+          <housing datatype="string" range_basic="G,S" range_advanced="G,S" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Social environment in which fly was raised. Group (G) or Single (S)." required="true" default="$LAST" last="" />
+          <hours_sorted datatype="float" range_basic="[0,Inf]" range_advanced="[0,Inf]" units="hours" appear_basic="true" appear_advanced="true" entry="manual" description="Time in hours between sorting and experiment start." required="true" default="$LAST" last=""></hours_sorted>
+          <datetime_sorting datatype="datetime" range_basic="[now-10,now], days" range_advanced="[now-10,now], days" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Date and time at which the flies were sorted." required="true" default="$LAST" last=""></datetime_sorting>
+        </handling>
+      </flies>
+    </session>
+    <session>
+      <id datatype="integer" range_basic="[2,2]" range_advanced="[2,2]" units="" appear_basic="true, readonly" appear_advanced="true, readonly" entry="manual" description="The identifier of the fly within the chamber" required="true" default="2" last="2" />
+      <marking datatype="integer" range_basic="[0,1)" range_advanced="[0,1)" units="" appear_basic="true" appear_advanced="true" entry="manual" description="The identifier of the fly within the chamber" required="true" default="0" last="0"></marking>
+      <flies>
+        <cross_barcode datatype="integer" range_basic="[-1,Inf]" range_advanced="[-1,Inf]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Barcode_CrossSerialNumber from FLYF_2 Project_Crosses table" required="true" default="-1" last="-1" />
+        <line datatype="string" range_basic="$LINENAME" range_advanced="$LINENAME" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Verified as legal line name in SAGE. New line names may be added to SAGE using the web interface. " required="true" default="$LAST" last="" />
+        <effector datatype="string" range_basic="$EFFECTOR" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Verified as legal effector name in SAGE." required="true" default="$LAST" last="" />
+        <gender datatype="string" range_basic="m" range_advanced="m,f" units="" appear_basic="true, readonly" appear_advanced="true" entry="manual" description="The gender or genders of the flies. m=male, f=female" required="true" default="m" last="" />
+        <cross_date datatype="datetime" range_basic="[now-29,now-22], days" range_advanced="[now-29,now-22], days" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Date cross was made to generate this set of flies. " required="true" default="$LAST" last="" />
+        <wish_list datatype="integer" range_basic="[-1,Inf]" range_advanced="[-1,Inf]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Wish list number (set number)" required="true" default="$LAST" last="-1"></wish_list>
+        <genotype>
+          <content datatype="string" range_basic="" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Genotype of flies. Typically auto-generated from line and effector. " required="true" default="" last=""></content>
+        </genotype>
+        <rearing>
+          <rearing_protocol datatype="string" range_basic="RP_AggPrimary_v001p1.xlsx" range_advanced="RP_AggPrimary_v001p1.xlsx" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of an XML file that has values for rearing parameters (see bottom of page for protocol fields)&#xD;&#xA;whenever a rearing protocol variable is changed, user will need to create new rearing protocol file and give it a new name ." required="true" default="$LAST" last=""></rearing_protocol>
+          <rearing_incubator datatype="integer" range_basic="[1,5]" range_advanced="[1,5]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Incubator in which flies were raised." required="true" default="$LAST" last="" />
+        </rearing>
+        <handling>
+          <handling_protocol datatype="string" range_basic="HP_AggPrimary_v001p1.xlsx" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of an XML file that has values for pre-assay handling parameters (see bottom of page for protocol fields) whenever a handling protocol variable is changed, user will need to create new rearing protocol file and give it a new name ." required="true" default="$LAST" last="" />
+          <handler_sorting datatype="string" range_basic="mercerm" range_advanced="$LDAP" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of the person who sorted the flies. " required="true" default="$LAST" last="" />
+          <handler_cross datatype="string" range_basic="mcmahonj" range_advanced="$LDAP" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Name of the person who handled the flies pre-experiment." required="true" default="$LAST" last="" />
+          <housing datatype="string" range_basic="G,S" range_advanced="G,S" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Social environment in which fly was raised. Group (G) or Single (S)." required="true" default="$LAST" last="" />
+          <hours_sorted datatype="float" range_basic="[0,Inf]" range_advanced="[0,Inf]" units="hours" appear_basic="true" appear_advanced="true" entry="manual" description="Time in hours between sorting and experiment start." required="true" default="$LAST" last=""></hours_sorted>
+          <datetime_sorting datatype="datetime" range_basic="[now-10,now], days" range_advanced="[now-10,now], days" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Date and time at which the flies were sorted." required="true" default="$LAST" last=""></datetime_sorting>
+        </handling>
+      </flies>
+    </session>
+    <flag_aborted>
+      <content datatype="integer" range_basic="[0,1]" range_advanced="[0,1]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Whether the experiment was aborted - 0=OK, 1=aborted" required="true" default="0" last="" />
+    </flag_aborted>
+  </experiment>
+  <environment>
+    <temperature datatype="float" range_basic="" range_advanced="" units="degrees Celsius" appear_basic="false" appear_advanced="false" entry="acquire" description="Temperature snapshot at the time the assay was started." required="true" default="" last="" />
+    <humidity datatype="float" range_basic="" range_advanced="" units="percent" appear_basic="false" appear_advanced="false" entry="acquire" description="Humidity snapshot at the time the assay was started." required="true" default="" last="" />
+  </environment>
+  <notes_behavioral>
+    <content datatype="string" range_basic="" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="manual" description="An open field area for the experimenter to write observations about fly behavior from the start of the experiment." required="false" default="" last="" />
+  </notes_behavioral>
+  <notes_technical>
+    <content datatype="string" range_basic="" range_advanced="" units="" appear_basic="true" appear_advanced="true" entry="manual" description="An open field area for the experimenter to write observations about experimental equipment/conditions at the start of the experiment." required="false" default="" last="" />
+  </notes_technical>
+  <notes_keyword>
+    <content datatype="multiselect" range_basic="$NOTES_KEYWORDS" range_advanced="$NOTES_KEYWORDS" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Legal keyword(s) from SAGE cv_term table" required="false" default="" last="" />
+  </notes_keyword>
+  <flag_redo>
+    <content datatype="integer" range_basic="[0,1]" range_advanced="[0,1]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Flag specifying whether or not experiment should be re-done. See notes_technical for details." required="true" default="0" last="" />
+  </flag_redo>
+  <flag_review>
+    <content datatype="integer" range_basic="[0,1]" range_advanced="[0,1]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Specifies that expert should review results of the experiment.  See notes_behavioral or notes_technical." required="true" default="0" last="false" />
+  </flag_review>
+  <flag_legacy>
+    <content datatype="integer" range_basic="[0,1]" range_advanced="[0,1]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="1= Experiment took place prior to XML specification." required="true" default="0" last="false" />
+  </flag_legacy>
+</experiment>

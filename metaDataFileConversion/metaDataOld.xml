@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flyBowl assay="flybowl" exp_datetime="" experimenter="Masayoshi">
+    <apparatus room="3E.288"/>
+    <flies cross_date="20180222T000000"
+        female_parent="20XUAS_CsChrimson_mVenus_attP18" flip_used="0"
+        gender="m" male_parent="SS43925" num_flies="10">
+        <genotype/>
+        <rearing incubator="A"/>
+        <handling cross_food="1_500" datetime_sorted="20180308T000000"
+            handler_cross="Masayoshi" handler_sorting="Masayoshi" sort_food="1_250"/>
+    </flies>
+    <environment IR_intensity="30" LED_intensity_scale="LINEAR"
+        humidity="" temperature=""/>
+</flyBowl>

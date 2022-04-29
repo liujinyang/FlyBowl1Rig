@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<experiment>
+    <assay appear_advanced="true" appear_basic="true, readonly"
+        datatype="string" default="$LAST" description="Name of assay"
+        entry="manual" last="FlyBowl"
+        range_advanced="The Box,Trikinetics,FlyBowl,Sterility,Gap Crossing,Aggression"
+        range_basic="The Box,Trikinetics,FlyBowl,Sterility,Gap Crossing,Aggression"
+        required="true" units=""/>
+    <flies>
+        <line appear_advanced="true" appear_basic="true"
+            datatype="string" default="$LAST"
+            description="Verified as legal line name in SAGE. New line names may be added to SAGE using the web interface."
+            entry="manual" last="2135003" range_advanced="$LINENAME"
+            range_basic="$LINENAME" required="true" units=""/>
+        <effector appear_advanced="true" appear_basic="true, readonly"
+            datatype="string" default="$LAST"
+            description="Verified as legal effector name in SAGE."
+            entry="manual" last="3xwt_attp40_4stop1"
+            range_advanced="$EFFECTOR" range_basic="$EFFECTOR"
+            required="true" units=""/>
+        <genotype>
+            <content appear_advanced="true" appear_basic="true"
+                datatype="string" default="$LAST"
+                description="Genotype of flies. Typically auto-generated from line and effector."
+                entry="acquire" last="" range_advanced="" range_basic=""
+                required="true" units=""/>
+        </genotype>
+        <gender appear_advanced="true" appear_basic="true, readonly"
+            datatype="string" default="$LAST"
+            description="The gender or genders of the flies. m=male, f=female, b=both, x=unknown"
+            entry="manual" last="m" range_advanced="m,f,b,x"
+            range_basic="m,f,b,x" required="true" units=""/>
+        <cross_date appear_advanced="true" appear_basic="true"
+            datatype="datetime" default="$LAST"
+            description="Date cross was made to generate this set of flies."
+            entry="manual" last="20141225T000000"
+            range_advanced="[now-35,now-20], days"
+            range_basic="[now-35,now-20], days" required="true" units=""/>
+        <count appear_advanced="true" appear_basic="true"
+            datatype="integer" default="$LAST"
+            description="Number of flies actually put into apparatus for this experiment; may be different from protocol number of flies intended for the experiment."
+            entry="manual" last="25" range_advanced="[0,50]"
+            range_basic="[0,50]" required="true" units="flies"/>
+        <hours_starved appear_advanced="true" appear_basic="true"
+            datatype="float" default="$LAST"
+            description="Number of hours flies were starved prior to start of experiment."
+            entry="manual" last="24" range_advanced="[0,48]"
+            range_basic="[0,48]" required="true" units="hours"/>
+        <rearing>
+            <protocol appear_advanced="true"
+                appear_basic="true, readonly" datatype="string"
+                default="$LAST"
+                description="Name of an XML file that has values for rearing parameters (see bottom of page for protocol fields) whenever a rearing protocol variable is changed, user will need to create new rearing protocol file and give it a new name ."
+                entry="manual" last="RP0001"
+                range_advanced="RP0001,RP0002"
+                range_basic="RP0001,RP0002" required="true" units=""/>
+            <incubator appear_advanced="true" appear_basic="true"
+                datatype="integer" default="$LAST"
+                description="ID number for incubator flies were raised in."
+                entry="manual" last="2" range_advanced="[1,4]"
+                range_basic="[1,4]" required="true" units=""/>
+        </rearing>
+        <handling>
+            <protocol appear_advanced="true"
+                appear_basic="true, readonly" datatype="string"
+                default="$LAST"
+                description="Name of an XML file that has values for pre-assay handling parameters (see bottom of page for protocol fields) whenever a handling protocol variable is changed, user will need to create new rearing protocol file and give it a new name ."
+                entry="manual" last="HP0001"
+                range_advanced="HP0001,HP0002"
+                range_basic="HP0001,HP0002" required="true" units=""/>
+            <handler appear_advanced="true" appear_basic="true"
+                datatype="string" default="$LAST"
+                description="Name of the person who handled the flies pre-experiment."
+                entry="manual" last="ldap_user_1" range_advanced="$LDAP"
+                range_basic="$LDAP" required="true" units=""/>
+            <sorter appear_advanced="true" appear_basic="true"
+                datatype="string" default="$LAST"
+                description="Name of the person who sorted the flies."
+                entry="manual" last="ldap_user_1" range_advanced="$LDAP"
+                range_basic="$LDAP" required="true" units=""/>
+            <sorting_time appear_advanced="true" appear_basic="true"
+                datatype="float" default="$LAST"
+                description="Time in hours when flies were sorted."
+                entry="manual" last="1" range_advanced="[0,Inf]"
+                range_basic="[0,Inf]" required="true" units="hours"/>
+        </handling>
+    </flies>
+    <protocol appear_advanced="true" appear_basic="true, readonly"
+        datatype="string" default="$LAST"
+        description="Name of an XML file that has values for experiment parameters (see bottom of page for protocol fields) whenever an experiment protocol variable is changed, user will need to create new rearing protocol file and give it a new name"
+        entry="manual" last="EP0001.xml"
+        range_advanced="EP0001.xml,EP0002.xml"
+        range_basic="EP0001.xml,EP0002.xml" required="true" units=""/>
+    <experimenter appear_advanced="true" appear_basic="true"
+        datatype="string" default="$LAST"
+        description="Name of the person who is running the experiment."
+        entry="manual" last="ldap_user_1" range_advanced="$LDAP"
+        range_basic="$LDAP" required="true" units=""/>
+    <exp_datetime appear_advanced="false" appear_basic="false"
+        datatype="datetime" default=""
+        description="Date and time at which the experiment was started."
+        entry="acquire" last="" range_advanced="" range_basic=""
+        required="true" units=""/>
+    <environment>
+        <temperature appear_advanced="false" appear_basic="false"
+            datatype="float" default=""
+            description="Temperature snapshot at the time the assay was started."
+            entry="acquire" last="" range_advanced="[-Inf, Inf]"
+            range_basic="[-Inf, Inf]" required="true" units="degrees Celsius"/>
+        <humidity appear_advanced="false" appear_basic="false"
+            datatype="float" default=""
+            description="Humidity snapshot at the time the assay was started."
+            entry="acquire" last="" range_advanced="[0,100]"
+            range_basic="[0,100]" required="true" units="percent"/>
+    </environment>
+    <note_behavioral>
+        <content appear_advanced="true" appear_basic="true"
+            datatype="string" default=""
+            description="An open field area for the experimenter to write observations about fly behavior from the start of the experiment."
+            entry="manual" last="" range_advanced="" range_basic=""
+            required="false" units=""/>
+    </note_behavioral>
+    <note_technical>
+        <content appear_advanced="true" appear_basic="true"
+            datatype="string" default=""
+            description="An open field area for the experimenter to write observations about experimental equipment/conditions at the start of the experiment."
+            entry="manual" last="" range_advanced="" range_basic=""
+            required="false" units=""/>
+    </note_technical>
+    <flag_redo>
+        <content appear_advanced="true" appear_basic="true"
+            datatype="string" default="None"
+            description="Flag specifying whether or not experiment should be re-done and why."
+            entry="manual" last="None"
+            range_advanced="None, Rearing problem, Flies look sick, See behavioral notes, See technical notes"
+            range_basic="None, Rearing problem, Flies look sick, See behavioral notes, See technical notes"
+            required="true" units=""/>
+    </flag_redo>
+    <flag_review>
+        <content appear_advanced="true" appear_basic="true"
+            datatype="string" default="None"
+            description="Flag specifying whether or not experiment should be re-done and why."
+            entry="manual" last="None"
+            range_advanced="None, Rearing problem, Flies look sick, See behavioral notes, See technical notes"
+            range_basic="None, Rearing problem, Flies look sick, See behavioral notes, See technical notes"
+            required="true" units=""/>
+    </flag_review>
+    <apparatus>
+        <id appear_advanced="false" appear_basic="false"
+            datatype="string" default=""
+            description="Apparatus identifier, generated from rig, plate, bowl"
+            entry="acquire" last="" range_advanced="" range_basic=""
+            required="true" units=""/>
+        <rig appear_advanced="true" appear_basic="true"
+            datatype="string" default="$LAST"
+            description="Rig identifier." entry="manual" last="1"
+            range_advanced="1,2" range_basic="1,2" required="true" units=""/>
+        <plate appear_advanced="true" appear_basic="true"
+            datatype="integer" default="$LAST"
+            description="Plate identifier." entry="manual" last="20"
+            range_advanced="[1,40]" range_basic="[1,40]" required="true" units=""/>
+        <bowl appear_advanced="true" appear_basic="true"
+            datatype="string" default="$LAST"
+            description="Bowl identifier." entry="manual" last="1"
+            range_advanced="1,2,3,4" range_basic="1,2,3,4"
+            required="true" units=""/>
+        <camera appear_advanced="false" appear_basic="false"
+            datatype="string" default="$LAST"
+            description="Camera identifier." entry="acquire" last=""
+            range_advanced="" range_basic="" required="true" units=""/>
+        <computer appear_advanced="true, readonly"
+            appear_basic="true, readonly" datatype="string" default=""
+            description="Computer identifier." entry="acquire" last=""
+            range_advanced="" range_basic="" required="true" units=""/>
+        <harddrive appear_advanced="true" appear_basic="true"
+            datatype="string" default="$LAST"
+            description="Harddrive identifier." entry="manual"
+            last="HD1"
+            range_advanced="HD1,HD2,HD3,HD4,Internal_C,Internal_D,Internal_E,Internal_F"
+            range_basic="HD1,HD2,HD3,HD4,Internal_C,Internal_D,Internal_E,Internal_F"
+            required="true" units=""/>
+    </apparatus>
+    <aborted appear_advanced="false" appear_basic="false"
+        datatype="integer" default="0"
+        description="Whether the experiment was aborted" entry="acquire"
+        last="" range_advanced="[0,1]" range_basic="[0,1]"
+        required="true" units=""/>
+</experiment>

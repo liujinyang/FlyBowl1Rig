@@ -1,0 +1,9 @@
+This folder contains some xml defaults files for testing aspects of the
+XMLDefaults class.
+
+1. session_test1_defaults.xml - this file contains nested session element
+types and should fail when it is loaded for this reason.
+
+2. session_test2_defaults.xm - this file contains session elements where the 
+tree structure beneath the elements is not identical which should cause it to
+raise an error when loaded.   

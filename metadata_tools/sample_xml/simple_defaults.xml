@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<experiment>
+  <apparatus>
+    <type 
+      datatype="string" 
+      range_basic="rig1, rig2, rig3" 
+      range_advanced="rig" 
+      units="" 
+      appear_basic="false" 
+      appear_advanced="false" 
+      entry="manual" 
+      description="Experimental apparatus " 
+      required="true" 
+      default="rig1" 
+      last="" 
+      />
+    <id 
+      datatype="integer" 
+      range_basic="[1,Inf]" 
+      range_advanced="[1,Inf]" 
+      units="" 
+      appear_basic="false" 
+      appear_advanced="false" 
+      entry="manual" 
+      description="Apparatus identification number" 
+      required="true" 
+      default="1" 
+      last="" 
+      />
+  </apparatus>
+  <notes>
+    <content 
+      datatype="string" 
+      range_basic="" 
+      range_advanced="" 
+      units="" 
+      appear_basic="true" 
+      appear_advanced="true" 
+      entry="manual" 
+      description="Observations of behavior by experimenter" 
+      required="false" 
+      default="" 
+      last="" 
+      />
+  </notes>
+</experiment>

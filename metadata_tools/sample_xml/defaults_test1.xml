@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<experiment>
+  <apparatus>
+    <type datatype="string" range_basic="rig" range_advanced="rig" units="" appear_basic="true" appear_advanced="true" entry="manual" description="first apparatus type" required="true" default="rig" last=""></type>
+    <id datatype="integer" range_basic="[1,50]" range_advanced="[1,150]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Apparatus identification number" required="true" default="1" last="" />
+  </apparatus>
+  <apparatus>
+    <type datatype="string" range_basic="plate" range_advanced="plate" units="" appear_basic="true" appear_advanced="true" entry="manual" description="second apparatus type" required="true" default="plate" last=""></type>
+    <id_list datatype="integer_list" range_basic="[1,Inf]" range_advanced="[1,Inf]" units="" appear_basic="true" appear_advanced="true" entry="manual" description="Apparatus identification number" required="true" default="1,2,3,4,5,6" last="" />
+  </apparatus>
+</experiment>
