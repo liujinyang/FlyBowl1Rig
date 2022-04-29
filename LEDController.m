@@ -129,7 +129,7 @@ classdef LEDController < handle
             if  ~(obj.serialPort == 0)
                 % The first 0 means all panels, the second 0 means all
                 % quadrants
-                fprintf(obj.serialPort, 'ON');
+                fprintf(obj.serialPort, 'ON 0,0');
                 if obj.docheckstatus, [~,status] = checkControllerStatus(obj); end
             end
         end
@@ -145,11 +145,28 @@ classdef LEDController < handle
         %% functions to set up experiment protocols
         function totalSteps = addOneStep(obj,oneStep)
             if  ~(obj.serialPort == 0)
-                fprintf(obj.serialPort, ['addOneStep ',num2str([oneStep.NumStep, oneStep.RedIntensity, oneStep.RedPulsePeriod,...
-                    oneStep.RedPulseWidth, oneStep.RedPulseNum, oneStep.RedOffTime, oneStep.RedIteration, oneStep.GrnIntensity,...
-                    oneStep.GrnPulsePeriod, oneStep.GrnPulseWidth, oneStep.GrnPulseNum, oneStep.GrnOffTime, oneStep.GrnIteration,...
-                    oneStep.BluIntensity, oneStep.BluPulsePeriod, oneStep.BluPulseWidth, oneStep.BluPulseNum, oneStep.BluOffTime,...
-                    oneStep.BluIteration,oneStep.DelayTime, oneStep.Duration])]);
+                
+                s = 'addOneStep ';
+                x = [oneStep.NumStep, oneStep.RedIntensity, oneStep.RedPulseWidth,...
+                    oneStep.RedPulsePeriod, oneStep.RedPulseNum, oneStep.RedOffTime, oneStep.RedIteration, oneStep.GrnIntensity,...
+                    oneStep.GrnPulseWidth, oneStep.GrnPulsePeriod, oneStep.GrnPulseNum, oneStep.GrnOffTime, oneStep.GrnIteration,...
+                    oneStep.BluIntensity, oneStep.BluPulseWidth, oneStep.BluPulsePeriod, oneStep.BluPulseNum, oneStep.BluOffTime,...
+                    oneStep.BluIteration,oneStep.DelayTime, oneStep.Duration];
+                
+                for i = 1:numel(x)
+                    if isequaln(x(i),fix(x(i)))
+                        s = [s,sprintf('%d ',x(i))];
+                    else
+                        s = [s,sprintf('%f ',x(i))];
+                    end
+                end
+                
+                if isfield(oneStep, 'Pattern')
+                    fprintf(obj.serialPort, [s, ' ', oneStep.Pattern]);
+                else
+                    fprintf(obj.serialPort, s);
+                end
+                
                 if obj.docheckstatus, [~,status] = checkControllerStatus(obj); end
                 totalSteps = str2double(status);
             end
@@ -194,7 +211,7 @@ classdef LEDController < handle
         %%other functions       
         function synCamera(obj, freq)
             if  ~(obj.serialPort == 0)
-                fprintf(obj.serialPort, ['SYNC ', freq]);
+                fprintf(obj.serialPort, ['SYNC ', num2str(freq)]);
                 if obj.docheckstatus, [~,status] = checkControllerStatus(obj); end
             end
         end

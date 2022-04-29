@@ -299,7 +299,7 @@ function figure1_CloseRequestFcn(hObject, eventdata, handles)
 if ishandle(handles.figMetaData)
     remindMessage = sprintf('Please close metaData input GUI to save data before you close the main GUI.');
     fprintf(1, '%s\n', remindMessage);
-    uiwait(warndlg(remindMessage));
+    warndlg(remindMessage);
     return; 
 end
 
@@ -846,7 +846,7 @@ if ishandle(handles.figMetaData)
     
     remindMessage = sprintf('Experiment was either aborted or finished, please close metaData input GUI to save data.');
     fprintf(1, '%s\n', remindMessage);
-    uiwait(warndlg(remindMessage));
+    warndlg(remindMessage);
     
     uiwait(handles.figMetaData);
 end
@@ -912,8 +912,12 @@ set(handles.run_exp,'enable','on');
 %guidata(handles.run_exp, handles);
 
 %start update temp and humidity value
+try
 if ~(handles.hComm.THSensor == 0)
     start(handles.tTemp);
+end
+catch ME
+    disp(ME);
 end
 end
 

@@ -1,10 +1,11 @@
 %flyBowl1 upper left corner
 serial_port_for_LED_Controller = 'COM8';
+defaultDir = 'C:\Users\labadmin\Documents\MATLAB\FlyBowlRGB\';
 
 %%settings of the camera
 camera(1).ip = '127.0.0.1';
 camera(1).port = 5010;
-defaultJsonFile(1).name = 'C:\Users\labadmin\Documents\MATLAB\FlyBowlRGB\bias_config_default1.json';
+defaultJsonFile(1).name = [defaultDir,'bias_config_default1.json'];
 windowGeometry(1).height= 479;
 windowGeometry(1).width= 588;
 windowGeometry(1).x= 660;
@@ -47,7 +48,6 @@ IrInt_DefaultVal = 70;
 %Directory settings
 expDataDir = 'E:\Data';
 %file settings
-defaultDir = 'C:\Users\labadmin\Documents\MATLAB\FlyBowlRGB\';
 ledProtocolDir = [defaultDir,'ledProtocols\'];
 expProtocolDir = [defaultDir,'ledProtocols\'];
 rearProtocolDir = [defaultDir,'ledProtocols\'];
