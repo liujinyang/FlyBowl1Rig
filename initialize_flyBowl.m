@@ -6,7 +6,7 @@ flyBowl_user_setting;
 fprintf('Opening LED controller...\n');
 LEDCtrl = LEDController(serial_port_for_LED_Controller);
 hComm.LEDCtrl = LEDCtrl;
-hComm.LEDCtrl.resetController();
+hComm.LEDCtrl.reset();
 %hComm.LEDCtrl.synCamera(frameRate);
 
 % hFlyBowlCtrl = ModularClient(serial_port_for_flyBowl_controller);
@@ -20,8 +20,8 @@ hComm.LEDCtrl.resetController();
 % hComm.LEDCtrl.visibleBacklightPowerToIntensityRatio('setValue',visibleBacklightPowerToIntensityRatio);
 
 %Run the camera server program bia
-cd(defaultDir);
-system('cmd /C bias_gui.bat && exit &');
+cmdString = ['cmd /C "',biasFile, '" && exit &'];
+system(cmdString);
 
 for i = 1:1
     try
