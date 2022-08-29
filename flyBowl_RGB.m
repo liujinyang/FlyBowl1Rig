@@ -638,9 +638,12 @@ if button_state == get(hObject,'Max')
     tab(1) = uitab(tabgp,'Title','flyBowl1');
     
     for i = 1:1
+        handles.defaultsTree(i).setValueByUniquePath({'experiment','exp_datetime'},datestr(handles.expStartTime,30));
+        handles.defaultsTree(i).setValueByUniquePath({'experiment','session','flies','handling' 'seconds_fliesloaded'}, num2str(round(etime(datevec(handles.expStartTime),datevec(handles.loadFlyTime(i))))));
         % Create JIDE PropertyGrid and display defaults data in figure
         pgrid = PropertyGrid(tab(i),'Position', [0 0 1 1]);
         pgrid.setDefaultsTree(defaultsTree(i), 'advanced');
+        drawnow;
     end
     
     if ~isempty(handles.ledProtocol)
@@ -660,19 +663,10 @@ if button_state == get(hObject,'Max')
     for i = 1:1
         if ~(handles.hComm.flea3{i} == 0) && handles.hComm.flea3IsActive(i)
             %cd(tempPath1);
-
-            handles.defaultsTree(i).setValueByUniquePath({'experiment','exp_datetime'},datestr(handles.expStartTime,30));
-            handles.defaultsTree(i).setValueByUniquePath({'experiment','session','flies','handling' 'seconds_fliesloaded'}, num2str(round(etime(datevec(handles.expStartTime),datevec(handles.loadFlyTime(i))))));
             enclosureNum = handles.defaultsTree(i).getValueByUniquePath({'experiment','session','apparatus','rig'});
-            %                     fParent = metaData.children(2).attribute.(['female_parent']);
-            %enclosureNum = metaData.children(2).attribute.('rig');
-            drawnow;
             
             %create a temporary folder first because mParent and fParent
             %are unavailable yet.
-            %             dataPath = [tempPath1, '\', datestr(handles.expStartTime,30), '_', 'rig', enclosureNum,...
-            %                 '_','flyBowl', num2str(i),'_',  '_',mParent, '_', fParent,'_',protocolName];
-            
             handles.enclosureNum{i} = enclosureNum;
             
             dataPath = [tempPath1, '\', datestr(handles.expStartTime,30), '_', 'rig', enclosureNum,...
