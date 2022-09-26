@@ -3,7 +3,7 @@
     <lab appear_advanced="true, readonly"
            appear_basic="true, readonly" datatype="string"
            default="Rubin Lab" description="Name of lab" entry="manual"
-           last="Rubin Lab" range_advanced="Rublin Lab" range_basic="Rubin Lab"
+           last="Rubin Lab" range_advanced="Rubin Lab" range_basic="Rubin Lab"
            required="true" units=""/>
     <assay appear_advanced="true, readonly"
         appear_basic="true, readonly" datatype="string"
