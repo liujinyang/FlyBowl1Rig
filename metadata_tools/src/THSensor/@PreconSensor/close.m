@@ -14,7 +14,7 @@ if ~obj.IsOpen,
 end
 
 try
-  fclose(obj.SerialPort);
+  clear obj.SerialPort;
   delete(obj.SerialPort);
 catch ME
   errormsg = getReport(ME,'basic','hyperlinks','off');
